@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import React from 'react';
+
 import {
   VStack,
   useDisclosure,
@@ -16,6 +18,7 @@ import { Tooltip } from "@chakra-ui/react";
 import { networkParams } from "./networks";
 import { connectors } from "./connectors";
 import { toHex, truncateAddress } from "./utils";
+import "./styles.css";
 
 export default function Home() {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -121,7 +124,6 @@ export default function Home() {
           >
             Demi-Human Comic Reader
           </Text>
-
         </HStack>
         <HStack>
           {!active ? (

@@ -7,7 +7,8 @@ import "./styles.css";
 
 import App from "./App";
 import Navbar from "./components/Navbar";
-
+import Card from "./components/Card";
+import Footer from "./components/Footer";
 const getLibrary = (provider) => {
   const library = new ethers.providers.Web3Provider(provider);
   library.pollingInterval = 8000; // frequency provider is polling
@@ -20,7 +21,9 @@ ReactDOM.render(
     <ChakraProvider>
       <Web3ReactProvider getLibrary={getLibrary}>
         <Navbar />
+        <Card />
         <App />
+        <Footer />
       </Web3ReactProvider>
     </ChakraProvider>
   </StrictMode>,
