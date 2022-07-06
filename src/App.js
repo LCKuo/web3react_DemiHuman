@@ -30,6 +30,7 @@ export default function Home() {
     deactivate,
     active
   } = useWeb3React();
+
   const [signature, setSignature] = useState("");
   const [error, setError] = useState("");
   const [network, setNetwork] = useState(undefined);
@@ -114,6 +115,31 @@ export default function Home() {
 
   return (
     <>
+    <div>
+         <div className="card">
+                    <div className="container">
+                        <img src="https://dictionary.cambridge.org/zht/images/thumb/black_noun_002_03536.jpg?version=5.0.245" className="card--image" />
+                        {/* <button className="btn" onClick={clicked}>CONNECT WALLET</button> */}
+                        <div>{!active ? (
+                          <button className="btn"  onClick={onOpen}>Connect Wallet</button>
+                               ) : (
+                          <button className="btn" onClick={disconnect}>Disconnect</button>
+                                   )}
+                        </div>
+                        {!active ? ( <h1 className="text">LOGIN TO VIEW YOUR COLLECTION</h1> 
+                              ) : (
+                             <h1 className="text">   {`${truncateAddress(account)}`} </h1>        
+                                   )} 
+                        </div>
+                    <div className="story--preview">
+                        <img src="https://uploads-ssl.webflow.com/6165507cab3fc14387e2119a/62b5653e9ef02b6bf2ecf662_%E6%88%AA%E5%9C%96%202022-06-24%20%E4%B8%8B%E5%8D%883.17.37-p-1600.png" className="card--image2" />
+                        <h1 className="card--story">The very first installment of the Demi-Human NFT Comic series!</h1>
+                        <h1 className="card--story">This story takes place in 2069, the earth trembles, in the Demiverse.</h1>
+                    <button className="bts">CLICK HERE FOR A PREVIEW</button>
+                   </div>
+            </div>
+      </div>
+
       <VStack alignItems="center" h="100vh">
         <HStack marginBottom="10px">
           <Text
@@ -125,6 +151,7 @@ export default function Home() {
             Demi-Human Comic Reader
           </Text>
         </HStack>
+        
         <HStack>
           {!active ? (
             <Button onClick={onOpen}>Connect Wallet</Button>
@@ -132,6 +159,7 @@ export default function Home() {
             <Button onClick={disconnect}>Disconnect</Button>
           )}
         </HStack>
+        
         <VStack justifyContent="center" alignItems="center" padding="10px 0">
           <HStack>
             <Text>{`Connection Status: `}</Text>
