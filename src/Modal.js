@@ -33,24 +33,24 @@ export default function SelectWalletModal({ isOpen, closeModal }) {
         />
         <ModalBody paddingBottom="1.5rem">
           <VStack>
-            <Button
+          <Button
               variant="outline"
               onClick={() => {
-                activate(connectors.coinbaseWallet);
-                setProvider("coinbaseWallet");
+                activate(connectors.injected);
+                setProvider("injected");
                 closeModal();
               }}
               w="100%"
             >
               <HStack w="100%" justifyContent="center">
                 <Image
-                  src="/cbw.png"
-                  alt="Coinbase Wallet Logo"
+                  src="/mm.png"
+                  alt="Metamask Logo"
                   width={25}
                   height={25}
                   borderRadius="3px"
                 />
-                <Text>Coinbase Wallet</Text>
+                <Text>Metamask</Text>
               </HStack>
             </Button>
             <Button
@@ -76,21 +76,21 @@ export default function SelectWalletModal({ isOpen, closeModal }) {
             <Button
               variant="outline"
               onClick={() => {
-                activate(connectors.injected);
-                setProvider("injected");
+                activate(connectors.coinbaseWallet);
+                setProvider("coinbaseWallet");
                 closeModal();
               }}
               w="100%"
             >
               <HStack w="100%" justifyContent="center">
                 <Image
-                  src="/mm.png"
-                  alt="Metamask Logo"
+                  src="/cbw.png"
+                  alt="Coinbase Wallet Logo"
                   width={25}
                   height={25}
                   borderRadius="3px"
                 />
-                <Text>Metamask</Text>
+                <Text>Coinbase Wallet</Text>
               </HStack>
             </Button>
           </VStack>
