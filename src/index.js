@@ -7,7 +7,6 @@ import "./styles.css";
 
 import App from "./App";
 import Navbar from "./components/Navbar";
-import Card from "./components/Card";
 import Footer from "./components/Footer";
 const getLibrary = (provider) => {
   const library = new ethers.providers.Web3Provider(provider);
@@ -21,7 +20,8 @@ ReactDOM.render(
     <ChakraProvider>
       <Web3ReactProvider getLibrary={getLibrary}>
         <Navbar />
-        <Card />
+        <h1 className="titles--Text">Demi-Comic Reader</h1>
+        <hr className="hr--line" />
         <App />
         <Footer />
       </Web3ReactProvider>

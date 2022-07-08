@@ -116,112 +116,27 @@ export default function Home() {
     <>
       <VStack alignItems="center" h="100vh">
         <HStack marginBottom="10px">
-          <Text
-            margin="0"
-            lineHeight="1.15"
-            fontSize={["1.5em", "2em", "3em", "4em"]}
-            fontWeight="600"
-          >
-            Demi-Human Comic Reader
-          </Text>
-        </HStack>
-        <HStack>
-          {!active ? (
-            <Button onClick={onOpen}>Connect Wallet</Button>
-          ) : (
-            <Button onClick={disconnect}>Disconnect</Button>
-          )}
-        </HStack>
-        <VStack justifyContent="center" alignItems="center" padding="10px 0">
-          <HStack>
-            <Text>{`Connection Status: `}</Text>
-            {active ? (
-              <CheckCircleIcon color="green" />
-            ) : (
-              <WarningIcon color="#cd5700" />
-            )}
-          </HStack>
-
-          <Tooltip label={account} placement="right">
-            <Text>{`Account: ${truncateAddress(account)}`}</Text>
-          </Tooltip>
-          <Text>{`Network ID: ${chainId ? chainId : "No Network"}`}</Text>
-        </VStack>
-        {active && (
-          <HStack justifyContent="flex-start" alignItems="flex-start">
-            <Box
-              maxW="sm"
-              borderWidth="1px"
-              borderRadius="lg"
-              overflow="hidden"
-              padding="10px"
-            >
-              <VStack>
-                <Button onClick={switchNetwork} isDisabled={!network}>
-                  Switch Network
-                </Button>
-                <Select placeholder="Select network" onChange={handleNetwork}>
-                  <option value="3">Ropsten</option>
-                  <option value="4">Rinkeby</option>
-                  <option value="42">Kovan</option>
-                  <option value="1666600000">Harmony</option>
-                  <option value="42220">Celo</option>
-                </Select>
-              </VStack>
-            </Box>
-            <Box
-              maxW="sm"
-              borderWidth="1px"
-              borderRadius="lg"
-              overflow="hidden"
-              padding="10px"
-            >
-              <VStack>
-                <Button onClick={signMessage} isDisabled={!message}>
-                  Sign Message
-                </Button>
-                <Input
-                  placeholder="Set Message"
-                  maxLength={20}
-                  onChange={handleInput}
-                  w="140px"
-                />
-                {signature ? (
-                  <Tooltip label={signature} placement="bottom">
-                    <Text>{`Signature: ${truncateAddress(signature)}`}</Text>
-                  </Tooltip>
-                ) : null}
-              </VStack>
-            </Box>
-            <Box
-              maxW="sm"
-              borderWidth="1px"
-              borderRadius="lg"
-              overflow="hidden"
-              padding="10px"
-            >
-              <VStack>
-                <Button onClick={verifyMessage} isDisabled={!signature}>
-                  Verify Message
-                </Button>
-                {verified !== undefined ? (
-                  verified === true ? (
-                    <VStack>
-                      <CheckCircleIcon color="green" />
-                      <Text>Signature Verified!</Text>
-                    </VStack>
+          <div>
+            <div className="card">
+              <div className="container">
+                <img src="https://dictionary.cambridge.org/zht/images/thumb/black_noun_002_03536.jpg?version=5.0.245" className="card--image" />
+                <h1 className="text">LOGIN TO VIEW YOUR COLLECTION</h1>
+                <HStack>
+                  {!active ? (
+                    <Button className="btn" onClick={onOpen}>Connect Wallet</Button>
                   ) : (
-                    <VStack>
-                      <WarningIcon color="red" />
-                      <Text>Signature Denied!</Text>
-                    </VStack>
-                  )
-                ) : null}
-              </VStack>
-            </Box>
-          </HStack>
-        )}
-        <Text>{error ? error.message : null}</Text>
+                    <Button className="btn" onClick={disconnect}>Disconnect</Button>
+                  )}
+                </HStack>
+              </div>
+              <div className="story--preview">
+                <img src="https://uploads-ssl.webflow.com/6165507cab3fc14387e2119a/62b5653e9ef02b6bf2ecf662_%E6%88%AA%E5%9C%96%202022-06-24%20%E4%B8%8B%E5%8D%883.17.37-p-1600.png" className="card--image2" />
+                <h1 className="card--story">The very first installment of the Demi-Human NFT Comic series!</h1>
+                <h1 className="card--story">This story takes place in 2069, the earth trembles, in the Demiverse.</h1>
+              </div>
+            </div>
+          </div>
+        </HStack>
       </VStack>
       <SelectWalletModal isOpen={isOpen} closeModal={onClose} />
     </>

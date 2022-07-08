@@ -159,7 +159,6 @@ hr {
   -ms-transform: translate(-50%, -50%);
   background-color: white;
   color: black;
-  font-size: 10px;
   border: none;
   cursor: pointer;
   border-radius: 6px;
@@ -184,6 +183,13 @@ hr {
 .titles {
   margin-top: 15px;
   margin-bottom: 10px;
+}
+
+.titles--Text {
+  text-align: center;
+  font-size: 50px;
+  color: black;
+  font-weight: bold;
 }
 
 .Footer {
@@ -229,4 +235,12 @@ hr {
   margin-top: 0px;
   margin-bottom: 0px;
 
+}
+
+.hr--line {
+  width: 60%;
+  height: 1px;
+  position: absolute;
+  left: 20%;
+  position: fixed;
 }
